@@ -6,11 +6,23 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 })
 export class FilmesService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-getProductions(){
+  getProductions(){  
+    return new Promise((resolve, reject) => {
+        this.http.get('https://lmcapifilmes.herokuapp.com/api/productions', {})    
+        .subscribe
+          ( (data: any) => {
+            console.log("retorno",data.Production);          
+            return resolve(data.Production)
 
-  console.log('no getProductions');
-  
-}
+          }), (error => {
+            return reject(error)
+            console.log(error.status);
+            console.log(error.error); // error message as string
+            console.log(error.headers);
+
+          });
+    });
+  }
 }

@@ -14,10 +14,23 @@ export class HomePage {
 
   }
 
-  
-  ngOnInit(){
+  async ngOnInit(){
     console.log('passou no home');
-    this.filmesService.getProductions();
+     this.carregarFilmes();      
+  }
+
+  async carregarFilmes(){
+    this.filmes  = await this.filmesService.getProductions();
+    console.log("filmes carregados", this.filmes)
+
+    const [firstKey] = Object.keys(this.filmes);
+    this.destaque = this.filmes[firstKey];
+
+    this.filmes.splice(firstKey, 1)
+    console.log('firstKey',firstKey)
+    console.log('destaque',this.destaque)
+    console.log('filmes',this.filmes)
+
   }
 
   pageDetails() {
