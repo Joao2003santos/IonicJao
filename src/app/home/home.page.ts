@@ -14,6 +14,7 @@ export class HomePage {
 
   }
 
+  
   ngOnInit(){
     console.log('passou no home');
     this.filmesService.getProductions();
