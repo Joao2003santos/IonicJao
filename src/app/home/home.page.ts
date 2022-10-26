@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilmesService } from '../services/filmes.service';
+import { DetalhesPage } from '../detalhes/detalhes.page';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,13 @@ import { FilmesService } from '../services/filmes.service';
 })
 export class HomePage {
 
-  constructor(private router: Router,
-    private filmesService: FilmesService){
+  filmes:any = [];
+  destaque:any [];
 
+  constructor(private router: Router,
+    private filmesService: FilmesService,
+    private Detalhes: DetalhesPage){
+    
   }
 
   async ngOnInit(){
@@ -33,6 +38,12 @@ export class HomePage {
 
   }
 
+  detalhesFilme(paramID){
+    console.log("passou "+paramID); 
+    this.router.navigate(['/detalhes', {id:paramID}])
+    this.Detalhes.carregarFilme(paramID);
+  }
+  
   pageDetails() {
     this.router.navigate(['/detalhes'])
   }
