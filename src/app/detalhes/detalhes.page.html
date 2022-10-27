@@ -9,23 +9,23 @@
   <ion-grid>
     <ion-row>
       <ion-col size-xs="12" size-md="4">
-        <ion-img class="principal" src="https://vizer.tv/content/movies/posterPt/342/27824.webp"></ion-img>
+        <ion-img class="principal" src="{{ filme.photo_link }}"></ion-img>
       </ion-col>
       <ion-col size-xs="12"  size-md="6">
         
           
           <ion-list>
             <ion-item>
-              <ion-label><b>Thor: Amor e Trovão</b></ion-label>
+              <ion-label><b>Titulo: {{filme.title}}</b></ion-label>
             </ion-item>
             <ion-item>
-              <ion-label><b>Categoria: </b> Filme</ion-label>
+              <ion-label><b>Categoria:{{filme.category_id}} </b> Filme</ion-label>
             </ion-item>
             <ion-item>
-              <ion-label><b>Genero: </b>Ação/Aventura</ion-label>
+              <ion-label><b>Genero:{{filme.genre}} </b></ion-label>
             </ion-item>
             <ion-item>
-              <ion-label><b>Duração: </b> 1h 59m</ion-label>
+              <ion-label><b>Duração:{{filme.duration}} </b> 1h 59m</ion-label>
             </ion-item>
           </ion-list>
           

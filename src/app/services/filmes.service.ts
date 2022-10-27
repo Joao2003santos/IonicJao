@@ -26,9 +26,9 @@ export class FilmesService {
     });
   }
 
-  getPegarFilme (){
+  getPegarFilme (ID){
     return new Promise((resolve, reject) => {
-      this.http.get('https://lmcapifilmes.herokuapp.com/api/productions/id', {})    
+      this.http.get('http://lmcapifilmes.herokuapp.com/api/production/'+ID, {})    
       .subscribe
         ( (data: any) => {
           console.log("retorno",data.Production);          

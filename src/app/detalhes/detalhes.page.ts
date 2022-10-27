@@ -20,7 +20,7 @@ export class DetalhesPage implements OnInit {
   }
 
   async carregarFilme(ID){
-    this.filme  = await this.filmesService.getProductions();
+    this.filme  = await this.filmesService.getPegarFilme(ID);
     console.log("filmes carregados", this.filme)
 
     const [firstKey] = Object.keys(this.filme);
