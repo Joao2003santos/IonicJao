@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilmesService } from '../services/filmes.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detalhes',
@@ -10,26 +11,19 @@ import { FilmesService } from '../services/filmes.service';
 export class DetalhesPage implements OnInit {
 
   filme:any = [];
-  destaque:any = [];
 
-  constructor(private filmesService: FilmesService) {
+  constructor(private filmesService: FilmesService,
+    private router: ActivatedRoute,
+    private rota: Router ) {
 
    }
-  ngOnInit() {
-    
+  async ngOnInit() {
+    this.router.params.subscribe (params => (this.carregarFilme(params['id'])))
   }
 
-  async carregarFilme(ID){
-    this.filme  = await this.filmesService.getPegarFilme(ID);
-    console.log("filmes carregados", this.filme)
-
+  async carregarFilme(id){
+    this.filme  = await this.filmesService.getPegarFilme(id);
     const [firstKey] = Object.keys(this.filme);
-    this.destaque = this.filme[firstKey];
-
-    this.filme.splice(firstKey, 1)
-    console.log('firstKey',firstKey)
-    console.log('destaque',this.destaque)
-    console.log('filmes',this.filme)
 
   }
 

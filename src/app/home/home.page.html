@@ -14,9 +14,9 @@
   </ion-header>
 
   <ion-content id="container">
-    <ion-grid>    
-      <ion-row>       
-        <ion-col class="img_destaque ion-align-self-center" size="12" >
+     <ion-grid>    
+     <ion-row>       
+        <ion-col class="img_destaque ion-align-self-center"  (click)="detalhesFilme(destaque.id)" size="12" >
           <label class="title">{{destaque.title}}</label>
           <ion-img src="{{ destaque.photo_link }}"></ion-img>        
         </ion-col>

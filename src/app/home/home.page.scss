@@ -1,22 +1,83 @@
-.principal {
-  display: block;
-  margin: 0px auto;
-}
-h2{
+// .principal {
+//   display: block;
+//   margin: 0px auto;
+// }
+// h2{
+//   text-align: center;
+// }
+// .secao img{
+//   margin: 20px;
+//   height: 300px;
+//   width: 250px;
+//   cursor: pointer;
+// }
+// .secao p{
+//   text-align: center;
+//   width: 300px;
+//   margin-top: -10px;
+// }
+
+// .principal {
+//   cursor: pointer;
+// }
+
+#container {
   text-align: center;
-}
-.secao img{
-  margin: 20px;
-  height: 300px;
-  width: 250px;
-  cursor: pointer;
-}
-.secao p{
-  text-align: center;
-  width: 300px;
-  margin-top: -10px;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.principal {
-  cursor: pointer;
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.img_destaque{
+  text-align: center;
+}
+
+//ion-content{
+ // --ion-background-color: var(--ion-color-dark);
+//}
+
+ion-header{
+  --ion-background-color: RED
+}
+
+ion-title{
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.img_destaque ion-img{
+  width: 70%;    
+  margin: auto;
+}
+
+.title{
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  background-color: black;
+  color:#ffffff;
+  font-weight: bold;
+  text-align: center;
 }
